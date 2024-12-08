@@ -7,7 +7,7 @@ function tampilkanPeminjaman() {
     peminjamanList.forEach((peminjaman) => {
         const row = tabel.insertRow();
         row.innerHTML = `
-            <td>${peminjaman.id_siswa}</td>
+            <td>${peminjaman.kelas_siswa}</td>
             <td>${peminjaman.nama_siswa}</td>
             <td>${peminjaman.barang}</td>
             <td>${peminjaman.jumlah}</td>
@@ -21,7 +21,7 @@ function tampilkanPeminjaman() {
 document.getElementById('pinjamForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Mencegah form submit biasa
 
-    const id_siswa = document.getElementById('id_siswa').value;
+    const id_siswa = document.getElementById('kelas_siswa').value;
     const nama_siswa = document.getElementById('nama_siswa').value;
     const barang = document.getElementById('barang').value;
     const jumlah = document.getElementById('jumlah').value;
@@ -30,7 +30,7 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
 
     // Membuat objek peminjaman baru
     const peminjamanBaru = {
-        id_siswa,
+        kelas_siswa,
         nama_siswa,
         barang,
         jumlah,
