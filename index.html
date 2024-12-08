@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Barang Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Peminjaman Barang Sekolah</h1>
+        
+        <!-- Form Peminjaman -->
+        <form id="pinjamForm">
+            <label for="id_siswa">ID Siswa:</label>
+            <input type="text" id="id_siswa" required><br>
+
+            <label for="nama_siswa">Nama Siswa:</label>
+            <input type="text" id="nama_siswa" required><br>
+
+            <label for="barang">Barang:</label>
+            <select id="barang" required>
+                <option value="">Pilih Barang</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Proyektor">Proyektor</option>
+                <option value="Meja">Meja</option>
+            </select><br>
+
+            <label for="jumlah">Jumlah:</label>
+            <input type="number" id="jumlah" min="1" required><br>
+
+            <label for="tgl_pinjam">Tanggal Pinjam:</label>
+            <input type="date" id="tgl_pinjam" required><br>
+
+            <label for="tgl_kembali">Tanggal Kembali:</label>
+            <input type="date" id="tgl_kembali" required><br>
+
+            <button type="submit">Pinjam Barang</button>
+        </form>
+
+        <h2>Daftar Peminjaman</h2>
+        <table id="daftar-peminjaman">
+            <thead>
+                <tr>
+                    <th>ID Siswa</th>
+                    <th>Nama Siswa</th>
+                    <th>Barang</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal Pinjam</th>
+                    <th>Tanggal Kembali</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Daftar peminjaman akan muncul di sini -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
