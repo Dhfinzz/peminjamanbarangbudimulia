@@ -12,7 +12,7 @@
         
         <!-- Form Peminjaman -->
         <form id="pinjamForm">
-            <label for="id_siswa">ID Siswa:</label>
+            <label for="id_siswa">Kelas Siswa:</label>
             <input type="text" id="id_siswa" required><br>
 
             <label for="nama_siswa">Nama Siswa:</label>
@@ -29,11 +29,11 @@
             <label for="jumlah">Jumlah:</label>
             <input type="number" id="jumlah" min="1" required><br>
 
-            <label for="tgl_pinjam">Tanggal Pinjam:</label>
-            <input type="date" id="tgl_pinjam" required><br>
+           <label for="tgl_pinjam">Tanggal dan Jam Pinjam:</label>
+    <input type="datetime-local" id="tgl_pinjam" required><br><br>
 
-            <label for="tgl_kembali">Tanggal Kembali:</label>
-            <input type="date" id="tgl_kembali" required><br>
+           <label for="tgl_kembali">Tanggal dan Jam Kembali:</label>
+    <input type="datetime-local" id="tgl_kembali" required><br><br>
 
             <button type="submit">Pinjam Barang</button>
         </form>
@@ -42,7 +42,7 @@
         <table id="daftar-peminjaman">
             <thead>
                 <tr>
-                    <th>ID Siswa</th>
+                    <th>Kelas Siswa</th>
                     <th>Nama Siswa</th>
                     <th>Barang</th>
                     <th>Jumlah</th>
