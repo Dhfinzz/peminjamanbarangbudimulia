@@ -78,10 +78,10 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
     };
 
     // URL Web App yang dihasilkan oleh Google Apps Script
-    var url = 'https://script.google.com/macros/s/AKfycbzOcYVK6aeKFhUS2b6b38jwaE_fFiW6Q0Z5pT_JsGep/dev'; // Gantilah dengan URL Web App Anda
+    var url = 'https://script.google.com/macros/s/AKfycbyy1lUs9BA3e6FPu_SmpbMEm7Qtd5l2jaLXQ0g7TaMg9RQuUdvGfIHQ1DAmZs9OYWibFw/exec'; // Gantilah dengan URL Web App Anda
 
     // Mengirim data ke Google Apps Script menggunakan fetch
-    fetch(url, {'https://script.google.com/macros/s/AKfycbzOcYVK6aeKFhUS2b6b38jwaE_fFiW6Q0Z5pT_JsGep/dev
+    fetch(url, {'https://script.google.com/macros/s/AKfycbyy1lUs9BA3e6FPu_SmpbMEm7Qtd5l2jaLXQ0g7TaMg9RQuUdvGfIHQ1DAmZs9OYWibFw/exec
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
