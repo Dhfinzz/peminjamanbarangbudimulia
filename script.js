@@ -78,7 +78,7 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
     };
 
     // Kirim data ke Google Apps Script (web app)
-    fetch('https://script.google.com/macros/s/AKfycbzcUEFA9kFaAskMGn_EhqHAjgEc6l-kApKmNevOElnf2n6PHmdTzifoFY12pdzz3XfpuQ/exec'), {
+    fetch('https://script.google.com/macros/s/AKfycbzcUEFA9kFaAskMGn_EhqHAjgEc6l-kApKmNevOElnf2n6PHmdTzifoFY12pdzz3XfpuQ/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
