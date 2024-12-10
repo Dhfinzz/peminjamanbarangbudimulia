@@ -21,7 +21,7 @@ function tampilkanPeminjaman() {
 document.getElementById('pinjamForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Mencegah form submit biasa
 
-    const id_siswa = document.getElementById('kelas_siswa').value;
+    const kelas_siswa = document.getElementById('kelas_siswa').value;
     const nama_siswa = document.getElementById('nama_siswa').value;
     const barang = document.getElementById('barang').value;
     const jumlah = document.getElementById('jumlah').value;
