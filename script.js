@@ -81,7 +81,7 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
     var url = 'https://script.google.com/macros/s/AKfycbzOcYVK6aeKFhUS2b6b38jwaE_fFiW6Q0Z5pT_JsGep/dev'; // Gantilah dengan URL Web App Anda
 
     // Mengirim data ke Google Apps Script menggunakan fetch
-    fetch(url, {
+    fetch(url, {'https://script.google.com/macros/s/AKfycbzOcYVK6aeKFhUS2b6b38jwaE_fFiW6Q0Z5pT_JsGep/dev
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
