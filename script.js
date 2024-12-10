@@ -57,7 +57,7 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
 // Panggil fungsi untuk menampilkan data peminjaman saat halaman dimuat
 window.onload = tampilkanPeminjaman;
 document.getElementById('pinjamForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Mencegah form dari reload halaman
+    e.preventDefault(); // Mencegah form agar tidak reload halaman setelah submit
 
     // Mengambil data dari form
     var kelas_siswa = document.getElementById('kelas_siswa').value;
@@ -67,7 +67,7 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
     var tgl_pinjam = document.getElementById('tgl_pinjam').value;
     var tgl_kembali = document.getElementById('tgl_kembali').value;
 
-    // Membuat objek data
+    // Membuat objek data untuk dikirim ke server (Google Apps Script)
     var formData = {
         kelas_siswa: kelas_siswa,
         nama_siswa: nama_siswa,
@@ -77,30 +77,37 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
         tgl_kembali: tgl_kembali
     };
 
-    // Kirim data ke Google Apps Script (web app)
-    fetch('https://script.google.com/macros/s/AKfycbzcUEFA9kFaAskMGn_EhqHAjgEc6l-kApKmNevOElnf2n6PHmdTzifoFY12pdzz3XfpuQ/exec', {
+    // URL Web App yang dihasilkan oleh Google Apps Script
+    var url = 'https://script.google.com/macros/s/AKfycbzOcYVK6aeKFhUS2b6b38jwaE_fFiW6Q0Z5pT_JsGep/dev'; // Gantilah dengan URL Web App Anda
+
+    // Mengirim data ke Google Apps Script menggunakan fetch
+    fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: new URLSearchParams(formData)
+        body: new URLSearchParams(formData) // Mengubah data form menjadi format URL encoded
     })
-    .then(response => response.text())
+    .then(response => response.text()) // Menerima respons dari server
     .then(data => {
-        alert('Data berhasil disimpan');
-        
-        // Menambahkan baris baru ke tabel di halaman
+        alert('Data berhasil disimpan!');
+        // Jika data berhasil disimpan, tambahkan baris baru di tabel di halaman
         var table = document.getElementById('daftar-peminjaman').getElementsByTagName('tbody')[0];
         var newRow = table.insertRow();
-        newRow.innerHTML = `<tr>
-            <td>${kelas_siswa}</td>
-            <td>${nama_siswa}</td>
-            <td>${barang}</td>
-            <td>${jumlah}</td>
-            <td>${tgl_pinjam}</td>
-            <td>${tgl_kembali}</td>
-        </tr>`;
+        newRow.innerHTML = `
+            <tr>
+                <td>${kelas_siswa}</td>
+                <td>${nama_siswa}</td>
+                <td>${barang}</td>
+                <td>${jumlah}</td>
+                <td>${tgl_pinjam}</td>
+                <td>${tgl_kembali}</td>
+            </tr>
+        `;
     })
-    .catch(error => alert('Gagal mengirim data: ' + error));
+    .catch(error => {
+        alert('Gagal mengirim data: ' + error);
+    });
 });
+
 
