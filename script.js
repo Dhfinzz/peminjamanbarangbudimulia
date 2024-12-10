@@ -56,5 +56,3 @@ document.getElementById('pinjamForm').addEventListener('submit', function(e) {
 
 // Panggil fungsi untuk menampilkan data peminjaman saat halaman dimuat
 window.onload = tampilkanPeminjaman;
-
-
